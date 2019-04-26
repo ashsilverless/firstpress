@@ -23,14 +23,39 @@
 
     <div class="container">
     
-        <div class="row mb5 w75 font400">
+        <div class="row">
+            
+            <div class="col-7">
+                
+            </div><!--col-->
+            
+            <div class="col-5">
+                
+                <div class="sidebar-cta">
+                    
+                    <h2 class="heading heading__lg font400">Find Your Perfect Job In Catering</h2>
+                    
+                    <a href="" class="button button__ghost button__fullwidth mt2">Submit CV</a>
+                    
+                </div>
+                
+                <div class="sidebar">
 
-            cdd
-            <?php
-            while ( have_posts() ) : the_post();
-                the_content();
-            endwhile;
-            ?>
+                    <h3 class="heading heading__md heading__alt-color mb1">Latest Jobs</h3>
+                    
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
+                    
+                </div>
+
+                <div class="sidebar-cta text-center">
+                    
+                    <a href="" class="heading__light"><h2 class="heading heading__md font400">Search All Jobs</h2></a>
+                    
+                </div>
+                
+                
+            </div><!--col-->            
+            
     
         </div>
       

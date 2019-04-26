@@ -4,6 +4,31 @@
 
 /*===========BODY==========*/
 
+.sidebar {
+    position: relative;
+    padding: 3em;
+    background:$brand-mid-grey;
+    color: white;
+    
+    &:after{
+        @include overflowRight
+        background: $brand-dark-grey;
+    }
+}
+
+.sidebar-cta {
+    position: relative;
+    padding: 3em;
+    background:$brand-dark-grey;
+    color: white;
+    
+    &:after{
+        @include overflowRight
+        background: $brand-dark-grey;
+    }    
+}
+
+
 /*===========FOOTER==========*/
 
 /*===========VENDOR ADJUSTMENTS==========*/
