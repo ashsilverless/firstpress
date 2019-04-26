@@ -42,17 +42,17 @@ add_action('wp_dashboard_setup', 'sl_dashboard_widget');
 function sl_dashboard_widget() {
 global $wp_meta_boxes;
  
-wp_add_dashboard_widget('custom_help_widget', 'firstpress Support', 'custom_dashboard_help');
+wp_add_dashboard_widget('custom_help_widget', 'Silverless Support', 'custom_dashboard_help');
 }
 function custom_dashboard_help() {
 ?>
 
-<img src="https://firstpress.co.uk/wp-content/themes/firstpress/images/logo__firstpress.svg" style="max-width:100%;
+<img src="https://silverless.co.uk/wp-content/themes/silverless/images/logo__silverless.svg" style="max-width:100%;
 height:auto;"/>
 
-<img src="https://firstpress.co.uk/wp-content/uploads/2016/10/icon-screen-delete.svg" style=" display: inline-block; width: 60px; margin: 2em calc(50% - 30px) 1em;"/>
+<img src="https://silverless.co.uk/wp-content/uploads/2016/10/icon-screen-delete.svg" style=" display: inline-block; width: 60px; margin: 2em calc(50% - 30px) 1em;"/>
 
-<p>For support or general enquiries please contact us directly at <a href="mailto:hello@firstpress.co.uk">hello@firstpress.co.uk</a> or call <a href="tel:+44 (0)1672 556532">01672 556532</a></p>
+<p>For support or general enquiries please contact us directly at <a href="mailto:hello@silverless.co.uk">hello@silverless.co.uk</a> or call <a href="tel:+44 (0)1672 556532">01672 556532</a></p>
 <p>We aim to respond within 60 minutes during hours (Mon to Fri 9am - 5pm)</p>
 
 <?php
