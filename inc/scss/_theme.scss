@@ -4,6 +4,26 @@
 
 /*===========BODY==========*/
 
+.leader {
+    @include backgroundCover;
+    display: grid;
+    height: 25em;
+    padding: 2em;
+    border: 3px solid $brand-primary;
+    color: white;
+    
+    .buttons {
+        align-self: flex-end;
+        margin-right: 4em;
+        
+        .button {
+            text-align: left;
+            font-weight: 400;
+        }
+    }
+}
+
+
 .sidebar {
     position: relative;
     padding: 3em;
@@ -26,6 +46,45 @@
         @include overflowRight
         background: $brand-dark-grey;
     }    
+}
+
+.testimonial-slider {
+    margin-bottom: 5em;
+    
+    &__item {
+        position: relative;
+        background:$brand-mid-grey;
+        padding:2em 5em 2em 2em;
+        font-size: 1.3em;
+        line-height: 1.4em;
+        font-style: italic;
+        text-align: justify;
+        color: white;
+        
+        &:before {
+            content:'';
+            position: absolute;
+            bottom:-20px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 20px 0 20px;
+            border-color: $brand-mid-grey transparent transparent transparent; 
+        }
+        
+        p {
+            margin-bottom: 0;
+        }
+        
+        span {
+            display: block;
+            font-size: 0.5em;
+            font-style: normal;
+            font-weight: 200;
+            text-transform: uppercase;
+            color: $brand-primary;
+        }
+    }
 }
 
 
