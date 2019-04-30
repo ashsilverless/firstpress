@@ -8,15 +8,7 @@ get_header();?>
 
 <!-- ******************* Hero Content ******************* -->
 
-<?php if( get_field('hero_height') == 'd-none' ): ?>
-
-    <div class="content no-hero">    
-        
-    <?php else:?>
-
-    <div class="content has-hero">
-
-<?php endif;?>
+<div class="content has-hero">
 
 <?php if( get_field('hero_background_image') ): 
 

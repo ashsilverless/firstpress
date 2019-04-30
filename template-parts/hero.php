@@ -30,18 +30,10 @@
 
                 <?php if ( is_front_page() ) {?>
                 
-                <form role="search" method="get" class="search-form mt3 mb3" action="<?php echo home_url( '/' ); ?>">
-                    
-                    <label>
-                        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
-                        <input type="search" class="search-field"
-                            placeholder="<?php echo esc_attr_x( 'Job Title/Job Keywords', 'placeholder' ) ?>"
-                            value="<?php echo get_search_query() ?>" name="s"
-                            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-                    </label>
-                    <input type="submit" class="search-submit"
-                        value="<?php echo esc_attr_x( 'Search Jobs', 'submit button' ) ?>" />
-                </form>
+	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form mt3 mb3">
+		<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Job Title / Job Keywords', 'firstpress' ); ?>" />
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search Jobs', 'firstpress' ); ?>" />
+	</form>
 
                 <?php }?>
            

@@ -3,10 +3,34 @@
 /*===========HEADER==========*/
 
 .search-form {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 60% 40%;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: 3em auto;    
     text-align: center;
     
     input {
-        border:none;
+        border: none;
+        font-size: 1.25em;
+        padding: 0.5em 1em;
+    }
+    
+    .submit {
+        display: inline-grid;
+        height: 100%;
+        font-size: 1em;
+        text-transform: uppercase;
+        background: $brand-dark-grey;
+        color: white;
+    }
+    
+    ::placeholder {
+        font-size: 1em;
+        font-weight: 200;
+        text-transform: uppercase;
     }
 }
 
