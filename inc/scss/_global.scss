@@ -61,9 +61,17 @@ img {
         color: white;
     }
     
-    &__alt-color {
-      color: $brand-tertiary;
+    &__primary-color {
+      color: $brand-primary;
     }
+
+    &__secondary-color {
+      color: $brand-secondary;
+    }
+    
+    &__tertiary-color {
+      color: $brand-tertiary;
+    }    
     
     &__xl {
         font-size: 4em;

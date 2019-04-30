@@ -12,89 +12,46 @@
 
     <div class="hero <?php the_field( 'hero_height' );?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
 
-    <?php 
-        if( get_field('hero_type') == 'video'): ?>
-    
-        <video autoplay muted loop class="fullscreen-video">
-        
-            <source src="<?php the_field('hero_video');?>" type="video/mp4">
-        
-        </video>
-    
-    <? endif;?>
-
     <div class="container">
     
         <div class="row">
                 
             <div class="hero__content">       
-                
-                <h1 class="heading heading__sm heading__light font800"><?php the_field( 'hero_sub_heading' );?></h1>            
-                <h3 class="heading heading__xl heading__light"><?php the_field( 'hero_heading' );?></h3>
-                <h2 class="heading heading__sm heading__light"><?php the_field( 'hero_copy' );?></h2>
 
-                <?php 
-                    if( have_rows('button') ): 
-                    while ( have_rows('button') ) : the_row(); ?>
+        				    <?php $brandImage = get_field('logo', 'options');?>	
+        				
+    						<a href="<?php echo home_url(); ?>" alt="<?php wp_title(''); ?>" title="<?php wp_title(''); ?>" class="logo">
+        						
+        						<img src="<?php echo $brandImage['url'];?>" alt="" title=""/>
+        						
+    						</a>
+
+                <h1 class="heading heading__xl heading__light"><?php the_field( 'hero_heading' );?></h1>
+
+                <?php if ( is_front_page() ) {?>
+                
+                <form role="search" method="get" class="search-form mt3 mb3" action="<?php echo home_url( '/' ); ?>">
                     
-                <a href="<?php the_sub_field( 'button_target' );?>" type="button" class="button">
-                    
-                    <?php the_sub_field( 'button_text' );?>
-                
-                </a>
-                
-                <?php endwhile; endif;?>
-                
+                    <label>
+                        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+                        <input type="search" class="search-field"
+                            placeholder="<?php echo esc_attr_x( 'Job Title/Job Keywords', 'placeholder' ) ?>"
+                            value="<?php echo get_search_query() ?>" name="s"
+                            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+                    </label>
+                    <input type="submit" class="search-submit"
+                        value="<?php echo esc_attr_x( 'Search Jobs', 'submit button' ) ?>" />
+                </form>
+
+                <?php }?>
+           
             </div>       
                 
         </div>
     
     </div>
-
-    <!--Scroll To Next Section <a href="" class="next-section">Learn More</a>-->
     
 </div><!--hero-->
 
 <?php endif;?>
 
-<?php 
-    if( get_field('hero_type') == 'slider'):
-?>
-
-    <div class="hero hero__carousel mb3 <?php the_field( 'hero_height' );?>">
-
-        <div class="owl-carousel owl-theme carousel">
-
-        <?php if( have_rows('hero_slider') ): while( have_rows('hero_slider') ): the_row();   ?>
-
-            <div class="carousel__item" style="background-image: url(<?php the_sub_field( 'slider_background' );?>);">
-
-            <div class="container">
-                
-               <h1 class="heading heading__xl heading__light font800"><?php the_sub_field( 'slider_header' );?></h1>            
-                
-               <h2 class="heading heading__sm heading__light"><?php the_sub_field( 'copy' );?></h2> 
-
-                <?php 
-                    if( have_rows('slider_button') ): 
-                    while ( have_rows('slider_button') ) : the_row(); ?>
-                    
-                <a href="<?php the_sub_field( 'button_target' );?>" type="button" class="button">
-                    
-                    <?php the_sub_field( 'button_text' );?>
-                
-                </a>
-                
-                <?php endwhile; endif;?>
-                
-            </div><!--c-->
-
-            </div>
-
-        <?php endwhile; endif;?>
-
-    </div>
-     
-    </div><!--hero-carousel-->
-
-<?php endif;?>
