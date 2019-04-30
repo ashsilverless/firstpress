@@ -10,8 +10,18 @@
     height: 100vh;
     z-index: 50; 
     padding-bottom: 2em; 
+    filter: saturate(50%);
+
+    &:before {
+        @include childOverlay;
+        background:black;
+        opacity:0.3;
+        z-index: -1
+    }
 
     &__content {
+        position: relative;
+        z-index: 10;
         
         h3 {
             position: relative;
@@ -25,6 +35,17 @@
                 width:50px;
                 height: 3px;
                 background: $brand-secondary;
+            }
+        }
+        
+        .logo {
+            display: block;
+            margin-bottom: 3em;
+            text-align: center;
+            
+            img {
+                width:5em;
+                filter: brightness(1000%);    
             }
         }
     }
