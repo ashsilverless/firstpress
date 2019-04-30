@@ -9,9 +9,81 @@
 
     <footer class="footer">
 
-<div class="pre-socket">
+<div class="quick-contact">
     
-   Get job alerts to your inbox 
+    <div class="container">
+    
+        <div class="row pt3 pb3">            
+            
+            <div class="col-3">            
+                
+                <h3 class="heading heading__sm font400">QUICK CONTACT</h3>
+                <p class="font400 mt2 mb0"><?php the_field('telephone_number', 'options');?></p>
+                <p class="font400"><?php the_field('email_address', 'options');?></p>
+            
+            </div>            
+            
+            <div class="col-9">            
+            <?php echo do_shortcode('[contact-form-7 id="1325"]');?>
+            
+            </div>                  
+            
+            
+            
+            
+            
+        </div><!--r-->
+    
+    </div><!--c-->    
+    
+    
+</div>
+        
+        
+        
+        
+        
+        
+        
+        <div class="pre-socket">
+
+        <div class="container">
+     
+                <div class="row pt2 pb2">
+
+                    <div class="col-4">
+                        
+                        <p class="font700">Get job alerts to your inbox</p>
+                        
+                        <p>Excepteur sint occaecat cupidatat non proident</p>
+    
+    
+                    </div><!--col-->
+                    
+                    <div class="col-2 offset-4">
+    
+                        <?php
+                            wp_nav_menu( array(
+                            'theme_location' => 'footer-menu1',
+                            'container_class' => 'footer' ) );
+                        ?>
+    
+                    </div><!--col-->                    
+
+                    <div class="col-2">
+                    
+                        <?php
+                            wp_nav_menu( array(
+                            'theme_location' => 'footer-menu2',
+                            'container_class' => 'footer' ) );
+                        ?>
+    
+    
+                    </div><!--col-->       
+
+                </div><!--row-->
+        
+        </div><!--container-->
     
     
 </div>

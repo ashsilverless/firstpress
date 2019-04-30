@@ -50,8 +50,7 @@ get_header();?>
 
                 <?php endwhile; endif;?>                
 
-<?php get_template_part('template-parts/testimonial');?>
-                
+                <?php get_template_part('template-parts/testimonial');?>
                 
             </div><!--col-->
             
@@ -88,8 +87,7 @@ get_header();?>
                 
                 
             </div><!--col-->            
-            
-    
+
         </div>
       
     </div><!--c-->

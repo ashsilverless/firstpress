@@ -160,10 +160,14 @@
 .owl-stage-outer,
 .owl-carousel .owl-stage,
 .owl-item {
-    height: 100%;
+    height: auto;
 }
 
 .owl-carousel {
+    
+    .owl-item {
+        padding-bottom: 20px;
+    }
 
     .owl-nav {
         position: absolute;

@@ -177,6 +177,97 @@
 
 /*===========FOOTER==========*/
 
+.pre-socket {
+    
+    background: $brand-mid-grey;
+    color: white;
+}
+
+.footer ul {
+    margin:0;
+    padding: 0;    
+    list-style: none;
+    
+    li a {
+        font-size: 0.75em; 
+        line-height: 1.5em;
+        text-transform: uppercase;
+        color: white;
+    }
+}
+
+.main-form {
+    display: grid;
+    grid-template-columns: 15% 35% 15% 35%;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-content: flex-start;
+    
+    .label {
+        overflow:hidden;
+        background: $brand-mid-grey;
+        color: white;
+    }
+
+    .input input {
+        height: 100%;
+        -webkit-appearance: none;
+        border: none;    
+    }
+    
+    .name-label,
+    .email-label,
+    .tel-label {
+        grid-column:1/2;     
+        overflow: hidden;  
+        margin-bottom: 10px;
+        padding: 0.5em;
+    }
+    
+    .name-input,
+    .email-input,
+    .tel-input {
+        grid-column:2/3;       
+        overflow: hidden;    
+        margin-bottom: 10px;
+    }    
+    
+    .message-label {
+        grid-column:3/4; 
+        grid-row: 1/2;    
+        overflow: hidden;      
+        margin-left: 10px;
+        margin-bottom: 10px;
+        padding: 0.5em;      
+    }    
+
+    .message-input {
+        grid-column:4/5;   
+        grid-row:1/4;    
+        overflow: hidden;          
+    }       
+    
+    textarea {
+        overflow: auto;
+        resize: vertical;
+        height: 100%;
+    }
+    
+}
+
+.wpcf7-submit {
+    float: right;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: 400;
+    background: $brand-mid-grey;
+    line-height: 2em;
+    border: none;
+    padding: 0.5em 2em;
+    margin-top: 10px;
+    color: white;
+}
+
+
 /*===========VENDOR ADJUSTMENTS==========*/
 
 .related.products,
