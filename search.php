@@ -1,53 +1,62 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying Search Results pages.
  *
- * @package firstpress
+ * @package fullwidth
  */
 
-get_header();
+get_header(); ?>
+
+<div class="hero h50" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
+
+    <div class="container">
+    
+        <div class="row">
+                
+            <div class="hero__content">       
+
+        				    <?php $brandImage = get_field('logo', 'options');?>	
+        				
+    						<a href="<?php echo home_url(); ?>" alt="<?php wp_title(''); ?>" title="<?php wp_title(''); ?>" class="logo">
+        						
+        						<img src="<?php echo $brandImage['url'];?>" alt="" title=""/>
+        						
+    						</a>
+
+                <h1 class="heading heading__xl heading__light">xx Jobs</h1>
+           
+            </div>       
+                
+        </div>
+    
+    </div>
+    
+</div><!--hero-->
+
+
+
+        <?php
+$s=get_search_query();
+$args = array(
+                's' =>$s
+            );
+    // The Query
+$the_query = new WP_Query( $args );
+if ( $the_query->have_posts() ) {
+        _e("<h2 style='font-weight:bold;color:#000'>Search Results for: ".get_query_var('s')."</h2>");
+        while ( $the_query->have_posts() ) {
+           $the_query->the_post();
+                 ?>
+                    <li>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </li>
+                 <?php
+        }
+    }else{
 ?>
-
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'slmaster' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+        <h2 style='font-weight:bold;color:#000'>Nothing Found</h2>
+        <div class="alert alert-info">
+          <p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p>
+        </div>
+<?php } ?>
+<?php get_footer(); ?>

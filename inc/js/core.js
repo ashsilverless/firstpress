@@ -17,15 +17,6 @@ jQuery(document).ready(function( $ ) {
     $(document).ready(function( $ ) {
       $( ".toggle" ).first().addClass( "active" );
     });
-
-/* GET HEIGHT OF NAV*/
-    
-    $(document).ready(function() {
-        var element = document.getElementById('nav');
-        var navHeight = element.offsetHeight;
-        //Use height var to set padding of page content
-        $(".content.no-hero").css("padding-top", navHeight);   
-    });
     
 /* ADD CLASS ON SCROLL*/
 
