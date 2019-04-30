@@ -28,8 +28,9 @@ add_action( 'wp_enqueue_scripts', 'firstpress_scripts' );
 function sl_custom_menu() {
   register_nav_menus(
     array(
-      'main-menu' => __( 'Main Menu' ),
-      'about-menu' => __( 'Advice Menu' )
+        'main-menu' => __( 'Main Menu' ),
+        'footer-menu1' => __( 'Footer Menu 1' ),
+        'footer-menu2' => __( 'Footer Menu 2' )
     )
   );
 }
