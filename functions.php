@@ -281,3 +281,84 @@ function firstpress_social_sharing_buttons($content) {
 require_once ('custom-post-types.php');
 
 require_once ('custom-taxonomies.php');
+
+/**= Filter Custom Type Job =**/
+
+function template_chooser($template) {    
+	global $wpdb;
+	
+	global $wp_query;
+	
+	$post_type = get_query_var('post_type');
+	
+	if( $wp_query->is_search && $post_type == 'job' ) {
+		
+		$job = get_query_var('s');
+		
+		$location = get_query_var('location');
+	
+		$salary = $_GET['salary'];
+		
+		$tax_query = array(
+			"relation" => "AND"
+		);
+		
+		if($location) {
+			$locationID = get_terms([
+			    'name__like' => $location,
+			    'fields' => 'ids'
+			]);
+			
+			array_push($tax_query,
+				array(
+		            'taxonomy' => 'location',
+		            'field'    => 'id',
+		            'terms'    => $locationID,
+		        )
+		    );
+		}
+		
+		if($salary) {
+			array_push($tax_query,
+				array(
+		            'taxonomy' => 'salary-range',
+		            'field'    => 'slug',
+		            'terms'    => $salary,
+		        )
+		    );
+		}
+		
+		$posts = $wpdb->get_results("
+			SELECT SQL_CALC_FOUND_ROWS $wpdb->posts.ID
+			FROM $wpdb->posts
+			INNER JOIN $wpdb->postmeta ON ($wpdb->posts.ID = $wpdb->postmeta.post_id)
+			WHERE 1=1
+			  AND (UPPER($wpdb->posts.post_title) LIKE UPPER('%$job%')
+				  OR ($wpdb->postmeta.meta_key = 'description' AND UPPER($wpdb->postmeta.meta_value) LIKE UPPER('%$job%')))
+			  AND $wpdb->posts.post_type = 'job'
+			  AND ($wpdb->posts.post_status = 'publish'
+			       OR $wpdb->posts.post_status = 'acf-disabled'
+			       OR $wpdb->posts.post_status = 'private')
+			GROUP BY $wpdb->posts.ID"
+		);
+					
+		$ids = array_map(function($post){
+			return $post->ID;
+		}, $posts);
+		
+		$wp_query->query(
+			array(
+				'post__in'  => $ids,
+				'post_type' => $post_type,
+			    'tax_query' => $tax_query
+			)
+		);
+		
+	
+		return locate_template('search-job.php');
+	}
+	
+	return $template;
+}
+
+add_filter('template_include', 'template_chooser');  
