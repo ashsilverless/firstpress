@@ -275,3 +275,9 @@ function firstpress_social_sharing_buttons($content) {
 	}
 };
 //add_filter( 'the_content', 'firstpress_social_sharing_buttons');
+
+/**= Add Custom Post Types and Taxonomies =**/
+
+require_once ('custom-post-types.php');
+
+require_once ('custom-taxonomies.php');
