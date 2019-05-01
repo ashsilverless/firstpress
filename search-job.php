@@ -67,8 +67,10 @@ get_header();?>
 						array_push($filter, $s);
 					if($location)
 						array_push($filter, $location);
-					if(isset($_GET['salary']) && $_GET['salary'])
-						array_push($filter, $_GET['salary']);
+					if(isset($_GET['salary']) && $_GET['salary']) {
+						$term = get_term_by('slug', $_GET['salary'], 'salary-range');
+						array_push($filter, $term->name);
+					}
 					
 				?>
 				
