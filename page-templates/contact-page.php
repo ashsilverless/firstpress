@@ -30,6 +30,18 @@ get_header();?>
                     <?php echo do_shortcode('[contact-form-7 id="1676" title="Full Contact Form"]');?>
                 </div>                               
 
+                <div class="callout mb5">
+                        <?php if( have_rows('callout') ): while( have_rows('callout') ): the_row(); ?>
+                            <h2 class="heading heading__md font700"><?php the_sub_field('heading');?></h2>
+                            
+                            <p><?php the_sub_field('copy');?></p>
+                    
+                            <a href="<?php the_sub_field('link');?>" class="button button__ghost button__fullwidth button__mandatory mb1">Read More</a>    
+                    
+                        <?php endwhile; endif;?>
+                
+                </div>
+
                 <div class="mb5">
                     <?php the_field('body_content');?>
                     

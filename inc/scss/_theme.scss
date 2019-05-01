@@ -484,6 +484,15 @@ input[type="file"] {
     color: white;
 }
 
+.callout {
+    padding: 2em 2em 1em;
+    background: $brand-secondary;
+    
+    p {
+        text-align: justify;
+    }
+}
+
 /*===========PAGE SPECIFIC==========*/
 
 .page-template-contact-page {
