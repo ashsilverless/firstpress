@@ -8,16 +8,41 @@
 
 <div class="sidebar">
 
-<?php for ($x = 0; $x <= 5; $x++) {
-    get_template_part('template-parts/beer', 'glass');
-} ?>
-
-    <h3 class="heading heading__md heading__alt-color mb1">Latest Jobs</h3>
-
-
-<?php for ($x = 0; $x <= 3; $x++) {
-    get_template_part('template-parts/job', 'card');
-} ?>
+    <h3 class="heading heading__md heading__alt-color mb1">Latest Jobs</h3>	
+	
+	<div class="jobs mb5">
+	                
+		<?php
+        
+        $jobs = get_posts(
+        	array(
+            	'post_type'      => 'job',
+            	'posts_per_page' => 3,
+            	'orderby'        => 'date',
+                'order'          => 'DESC'
+			)
+		);
+		
+		if($jobs) {
+			foreach($jobs as $job) {
+				$id 		 = $job->ID;
+				$salary 	 = get_field("salary", $id);
+				$time   	 = human_time_diff( get_the_time('U'), current_time('timestamp') ) . " ago";
+				$type		 = get_the_terms($id, 'type')[0]->name;
+				$title 		 = get_the_title($id);
+				$location 	 = get_the_terms($id, 'location')[0]->name;
+				$description = get_field("description", $id);
+				$link 		 = get_permalink($id);
+				
+				$salary = $salary ? "£ " . number_format($salary, 0, '.', ',') : "";
+				
+				include(get_template_directory() . '/template-parts/job-card.php');
+			}
+		}
+        
+        ?>
+        
+    </div>
     
 </div>
 
