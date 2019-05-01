@@ -1,19 +1,23 @@
-<div class="job-card-search job-card">
+<div class="job-card block <?php echo strtolower($type); ?>">
     
     <div class="content">
-    
-    <p class="salary"><?php echo $salary; ?></p>
-    
-    <p class="time"><i class="fas fa-clock"></i><?php echo $time; ?></p>
-    
-    <h5 class="heading heading__xs heading__secondary-color font200 mb0"><?php echo $type; ?></h5>
-    <h2 class="heading heading__sm heading__secondary-color mb0"><?php echo $title; ?></h5>
-    <h5 class="heading heading__xs heading__secondary-color font200 mb2"><?php echo $location; ?></h5>            
-    
-    <p class="description"><?php echo $description; ?></p>
+	    
+	    <h2 class="heading heading__sm"><?php echo $title; ?></h5>  
+	    
+	    <div class="description mt1 mb1"><?php echo substr(wp_strip_all_tags($description), 0, 110) . "..."; ?></div>
+	    
+	    <div class="info">
+		    
+		    <p class="salary"><?php echo $salary; ?></p>
+		    
+		    <h5 class="heading font200"><?php echo implode(" | ", [$location, $type]); ?></h5> 
+		    
+		    <p class="time"><i class="fas fa-clock"></i><?php echo $time; ?></p>      
+		
+	    </div>
     
     </div>
     
-    <a href=""><i class="fas fa-user-alt"></i> Apply Now</a>    
+    <a href="<?php echo $link; ?>"><i class="fas fa-angle-double-right"></i></a>    
     
 </div>

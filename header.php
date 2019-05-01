@@ -80,9 +80,9 @@
                             
                             <div class="nav-cta">
                             
-                                <a href="">Temp<br/>Jobs</a>
+                                <a href="<?php echo home_url() . "/temporary-jobs"; ?>">Temp<br/>Jobs</a>
                                 
-                                <a href="">Permanent<br/>Jobs</a>
+                                <a href="<?php echo home_url() . "/permanent-jobs"; ?>">Permanent<br/>Jobs</a>
                             
                             </div>
 

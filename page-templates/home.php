@@ -44,12 +44,11 @@ get_header();?>
                         
                     </div>
                     
-                    
                 </div>
 
                 <?php endwhile; endif;?>                
 
-                <?php get_template_part('template-parts/testimonial');?>
+				<?php get_template_part('template-parts/testimonial');?>
                 
             </div><!--col-->
             
