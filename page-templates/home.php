@@ -55,6 +55,12 @@ get_header();?>
             </div><!--col-->
             
             <div class="col-5 offset-1 sticky-sidebar">
+	            
+	            
+	            <?php
+		            set_query_var('color', 'brand-secondary'); // Primary or Secondary
+		            get_template_part('template-parts/search-block');
+		        ?>
                 
                 <div class="sidebar-cta">
                     

@@ -57,6 +57,92 @@
     }
 }
 
+.sidebar-job-search {
+	position: relative;
+    padding: 3em;
+    background:$brand-mid-grey;
+    text-transform: uppercase;
+	
+	&:after{
+        @include overflowRight
+        background: $brand-dark-grey;
+    }
+    
+    form {
+	    legend {
+		    color: $brand-primary;
+			font-size: 1.2em;
+			font-weight: 400;
+	    }
+	    
+	    input {
+			display: block;
+			width: 100%;
+			padding: 0.8em;
+			border: 2px solid $brand-primary;
+			text-transform: uppercase;
+			color: $brand-mid-grey;
+			margin: 1.5em 0;
+			
+			&::placeholder {
+				text-transform: uppercase;
+				color: $brand-mid-grey;
+			}
+			
+			&[type=submit] {
+				background: $brand-primary;
+				padding: 0.4em 0.8em;
+				color: white;
+				text-transform: uppercase;
+				text-align: left;
+				margin-bottom: 0;
+				cursor: pointer;
+				transition: $fastEffect;
+				
+				&:hover {
+					color: $brand-mid-grey;
+				}
+			}
+	    }
+	    
+	    select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			display: block;
+			border: 2px solid $brand-primary;
+			border-radius: 0;
+			display: block;
+			padding: 0.8em;
+			margin: 1.5em 0;
+			width: 100%;
+			
+			&.empty {
+				text-transform: uppercase;
+				color: $brand-mid-grey;
+			}
+	    }
+	    
+	    &.brand-secondary {
+		    
+		    legend {
+		    	color: $brand-secondary;
+			}
+			
+			input {
+				border: 2px solid $brand-secondary;
+				
+				&[type=submit] {
+					background: $brand-secondary;
+				}
+			}
+			
+			select {
+				border: 2px solid $brand-secondary;
+			}
+	    }
+    }
+}
 
 .sidebar {
     position: relative;
@@ -107,6 +193,10 @@
         .time {
             float:right;
             font-size: 0.75em;
+            
+            i {
+	            padding-right: 0.5em;
+            }
         }
         
         .heading:first-of-type {
@@ -131,6 +221,15 @@
             color: $brand-dark-grey;
         }
     }
+    
+    &-search {
+	    color: white;
+    }
+}
+
+.job-found {
+	width: 500px;
+	margin: 1em;
 }
 
 
