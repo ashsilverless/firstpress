@@ -329,6 +329,15 @@
     }
 }
 
+body.page-template-job-temporary .hero:before {
+	background: #aaff00;
+	opacity: 0.5;
+}
+
+body.page-template-job-permanent .hero:before {
+	background: #00ffee;
+	opacity: 0.5;
+}
 
 /*===========FOOTER==========*/
 
