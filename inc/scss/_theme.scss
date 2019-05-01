@@ -580,7 +580,18 @@ input[type="file"] {
   
 }
 
-
+.single-job .main-form.fullwidth {
+    grid-template-columns: 100%;
+    grid-template-rows: 3em 3em 3em 3em 3em 3em 3em 10em 3em;
+    
+    .label,
+    .input {
+        grid-column: 1/2;
+    }   
+    .label {
+        margin-bottom: 0;
+    } 
+}
 /*===========VENDOR ADJUSTMENTS==========*/
 
 .related.products,
