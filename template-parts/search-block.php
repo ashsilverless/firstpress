@@ -16,7 +16,12 @@
 		
 		$categories = get_categories('taxonomy=salary-range');
 		
-		if(sizeof($categories) > 0): ?>
+		if(sizeof($categories) > 0):
+		
+			usort($categories, function ($cat1, $cat2) {
+				return $cat1->term_order <=> $cat2->term_order;
+			});
+		?>
 		
 			<select name="salary" type="taxonomy" class="empty">
 				
