@@ -21,8 +21,7 @@ get_header();?>
         <div class="row">
             
             <div class="col-6 pt3">
-                
-                <h2 class="heading heading__md font700">Heading To Go Here</h2>
+
                 <div class="mb5">
                     <?php get_template_part('template-parts/text-block');?>
                 </div>
@@ -54,12 +53,7 @@ get_header();?>
                 
             </div><!--col-->
             
-            <div class="col-5 offset-1 sticky-sidebar">
-
-	            <?php
-		            set_query_var('color', 'brand-secondary'); // Primary or Secondary
-		            get_template_part('template-parts/search-block');
-		        ?>
+            <div class="col-5 offset-1">
 
                 <?php get_template_part('template-parts/sidebar');?>
                 

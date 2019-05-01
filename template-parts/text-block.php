@@ -1,8 +1,10 @@
+<h2 class="heading heading__md font700"><?php the_field( 'heading' );?></h2>
+
 <div class="expanding-copy <?php the_sub_field( 'text_type' );?> <?php the_sub_field( 'dev_class' );?>">
 
     <div class="expanding-copy__lead">
     
-        <?php the_field( 'text_block_text' );?>
+        <p><?php the_field( 'text_block_text' );?></p>
     
     </div>
     
@@ -14,7 +16,7 @@
     
     <div class="expanding-copy__more">
     
-        <?php the_field('text_block_text_more'); ?>          
+        <p><?php the_field('text_block_text_more'); ?></p>          
     
     </div>    
     
