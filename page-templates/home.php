@@ -43,7 +43,7 @@ get_header();?>
                         <a href="<?php the_sub_field('button_two_target');?>" class="button button__fullwidth" style="background-color: <?php the_sub_field('button_color');?>"><?php the_sub_field('button_two_text');?></a>
                         
                     </div>
-                    
+
                 </div>
 
                 <?php endwhile; endif;?>                
