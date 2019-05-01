@@ -22,7 +22,6 @@ get_header();?>
             
             <div class="col-6 pt3">
                 
-                <h2 class="heading heading__md font700">Heading To Go Here</h2>
                 <div class="mb5">
                     <?php get_template_part('template-parts/text-block');?>
                 </div>
