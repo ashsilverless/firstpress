@@ -45,11 +45,11 @@ get_header();?>
                 <div class="mb5">
                     <?php the_field('body_content');?>
                     
-                    <a href="" class="button button__ghost button__fullwidth button__mandatory mb1">Read our full Terms & Conditions</a>
+                    <a href="/terms-conditions" class="button button__ghost button__fullwidth button__mandatory mb1">Read our full Terms & Conditions</a>
                     
-                    <a href="" class="button button__ghost button__fullwidth button__mandatory mb1">Read our GDPR Policy</a>
+                    <a href="/gdpr-policy" class="button button__ghost button__fullwidth button__mandatory mb1">Read our GDPR Policy</a>
                     
-                    <a href="" class="button button__ghost button__fullwidth button__mandatory mb1">Read our Privacy Policy</a>
+                    <a href="/privacy-policy" class="button button__ghost button__fullwidth button__mandatory mb1">Read our Privacy Policy</a>
                     
                 </div>            
 
