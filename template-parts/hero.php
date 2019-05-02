@@ -26,7 +26,7 @@
         						
     						</a>
 
-                <h1 class="heading heading__xl heading__light"><?php the_field( 'hero_heading' );?></h1>
+                <h1 class="heading heading__xl heading__light center"><?php the_field( 'hero_heading' );?></h1>
 
                 <?php if ( is_front_page() ) {?>
                 

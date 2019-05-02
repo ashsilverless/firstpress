@@ -43,7 +43,10 @@ jQuery(document).ready(function( $ ) {
 
 	$(document).ready(function(){
         $('input#fileupload').change(function(){
-	        $(".file-name").text($(this).val());
+	        var file = $("input[type=file]")[0].files;
+	        var name = file.length > 0 ? file[0].name : "";
+	        $(".file-name").text(name);
+	        
         });
     });
 

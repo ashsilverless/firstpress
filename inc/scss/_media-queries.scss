@@ -150,9 +150,89 @@ body {
 }
 
 /*---CONTENT---*/
-  
-/*---FOOTER---*/
 
+.container {
+	padding: 0;
+    margin: 0;
+    max-width: 100%;
+    
+    .row {
+		width: 100%;
+		margin: 0;
+    
+	    & > div {
+			min-width: 100%;
+			max-width: 100%;
+			width: 100%;
+			flex: 0 0 100%;
+			margin: 0;
+		}
+	}
+}
+
+main .content .row {
+	.col-5 {
+		padding-top: 2em;
+		background: $brand-dark-grey;
+	}
+	
+	.col-6 {
+		padding: 4em 4em 0 4em;
+	}
+}
+
+.quick-contact {
+	.container {
+		padding: 0 3em;
+	}
+	
+	.wpcf7-form {
+		
+		.main-form {
+			display: flex;
+			flex-direction: column;
+			
+			.label {
+				margin: 0;
+			}
+			
+			.input input, .input textarea {
+				padding: 0.5em;
+			}
+		}
+	}
+}
+
+/*---FOOTER---*/
+.footer {
+	.socket, .socials {
+		text-align: center;
+	}
+	
+	.pre-socket {
+		text-align: center;
+		
+		a {
+			font-size: 1em;
+		}
+		
+		.col-2 {
+			display: inline-block;
+			min-width: 0;
+			flex: 0 0 50%;
+			
+			#menu-footer-menu-one {
+				text-align: left;
+				margin-left: 3em;
+			}
+			
+			#menu-footer-menu-two {
+				text-align: right;
+				margin-right: 3em; 
+			}
+		}
+	}
+}
 
 }/*---end small mq---*/
 
