@@ -51,8 +51,6 @@ get_header();?>
 	
 	<?php endif;?>
 
-
-
     <div class="container">
     
         <div class="row">
@@ -74,8 +72,8 @@ get_header();?>
 					
 				?>
 				
-				<h2 class="heading heading__md font700">Search Results for:</h2>
-				<div class="heading heading__md font700 mb2">"<?php echo implode(" - ", $filter); ?>"</div>
+				<p class="heading__sm font400">You searched for:
+				<?php echo implode(" & ", $filter); ?></p>
 	            
 	            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			

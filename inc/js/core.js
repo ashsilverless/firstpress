@@ -44,6 +44,7 @@ jQuery(document).ready(function( $ ) {
 	$(document).ready(function(){
         $('input#fileupload').change(function(){
 	        $(".file-name").text($(this).val());
+	        $('.custom-file-upload').addClass('attached');
         });
     });
 
