@@ -54,7 +54,6 @@ get_header();?>
            
 	            <div class="description"><?php the_field("description"); ?></div>
                 
-                <h5 class="heading heading__sm font700 mt3">Other Jobs in <?php echo $location;?></h5>       
             <?php 
 
                 $terms = wp_get_post_terms( $post->ID, 'location'); 
@@ -79,14 +78,16 @@ get_header();?>
 
                 $query = new WP_Query($args);
                 
-                if ( $query->have_posts() ) {
-                    while ( $query->have_posts() ) {
+                if ( $query->have_posts() ) {?>
+                
+                                <h5 class="heading heading__sm font700 mt3">Other Jobs in <?php echo $location;?></h5>       
+
+                    <?php while ( $query->have_posts() ) {
                         $query->the_post();
                 
                         get_template_part('template-parts/job-card-search');
                     }
                 }?>
-                
                 
             </div><!--col-->
             
