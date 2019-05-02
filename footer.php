@@ -101,9 +101,9 @@
                         
                         &copy; First Press <?php echo date ('Y');?>
     
-                        <a href="">Terms</a>
+                        <a href="<?php echo home_url() . '/terms-conditions'; ?>">Terms</a>
     
-                        <a href="">Privacy</a>    
+                        <a href="<?php echo home_url() . '/privacy-policy'; ?>">Privacy</a>    
     
                     </div>
 

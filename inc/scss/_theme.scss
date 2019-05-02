@@ -494,7 +494,7 @@ body.page-template-job-permanent .hero:before {
         overflow: hidden;      
         margin-left: 10px;
         margin-bottom: 10px;
-        padding: 0.5em;      
+        padding: 0.75em;      
     }    
 
     .message-input {
@@ -506,7 +506,7 @@ body.page-template-job-permanent .hero:before {
     .file-name {
 	    padding: 0.5em;
         font-size: 0.75em;
-        color: $brand-secondary;
+        color: $brand-light-grey;
     }     
     
     textarea {
@@ -527,7 +527,7 @@ body.page-template-job-permanent .hero:before {
             overflow: hidden;      
             margin-left: 0;
             margin-bottom: 10px;
-            padding: 0.5em; 
+            padding: 0.75em; 
             height: 3em;     
         }  
         
@@ -547,7 +547,7 @@ body.page-template-job-permanent .hero:before {
                 width: 75%;
                 margin-right: 2%;
                 margin-bottom: 0;
-                background: $brand-secondary;
+                background: $brand-light-grey;
                 color: white;
                 padding: 1.25em;
                 text-align: center;
@@ -637,7 +637,10 @@ input[type="file"] {
     }   
     .label {
         margin-bottom: 0;
-    } 
+        display: flex;
+		align-items: center;
+		height: 100%;
+    }
 }
 /*===========VENDOR ADJUSTMENTS==========*/
 
