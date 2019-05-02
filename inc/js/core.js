@@ -38,6 +38,14 @@ jQuery(document).ready(function( $ ) {
         }, 500);
         return false;
     });
+    
+/* File upload name */
+
+	$(document).ready(function(){
+        $('input#fileupload').change(function(){
+	        $(".file-name").text($(this).val());
+        });
+    });
 
 // ========== Controller for lightbox elements
 
