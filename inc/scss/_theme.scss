@@ -105,17 +105,43 @@
 			}
 	    }
 	    
+	    .select-wrapper {
+		    border: 2px solid $brand-primary;
+			margin: 1.5em 0;
+			background: white;
+			position: relative;
+			
+			.icon-select {
+				position: absolute;
+				right: 0;
+				top: 0;
+				height: 100%;
+				border: none;
+				background: $brand-primary;
+				color: white;
+				font-size: 1.5em;
+				z-index: 0;
+				width: 2.2em;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+	    }
+	    
 	    select {
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			appearance: none;
 			display: block;
-			border: 2px solid $brand-primary;
 			border-radius: 0;
 			display: block;
 			padding: 0.8em;
-			margin: 1.5em 0;
 			width: 100%;
+			outline: none;
+			border: none;
+			background: none;
+			position: relative;
+			z-index: 2;
 			
 			&.empty {
 				text-transform: uppercase;
@@ -137,8 +163,12 @@
 				}
 			}
 			
-			select {
+			.select-wrapper {
 				border: 2px solid $brand-secondary;
+				
+				.icon-select {
+					background: $brand-secondary;
+				}
 			}
 	    }
     }
@@ -471,7 +501,13 @@ body.page-template-job-permanent .hero:before {
         grid-column:4/5;   
         grid-row:1/4;    
         overflow: hidden;          
-    }       
+    }
+    
+    .file-name {
+	    padding: 0.5em;
+        font-size: 0.75em;
+        color: $brand-secondary;
+    }     
     
     textarea {
         height: 100%;
@@ -510,7 +546,8 @@ body.page-template-job-permanent .hero:before {
             label {
                 width: 75%;
                 margin-right: 2%;
-                background:$brand-dark-grey;
+                margin-bottom: 0;
+                background: $brand-secondary;
                 color: white;
                 padding: 1.25em;
                 text-align: center;
@@ -524,9 +561,15 @@ body.page-template-job-permanent .hero:before {
                 width: 23%;
                 margin-top: 0;
                 height: 4em;
+                padding: 0.5em;
             }
         }     
     }
+}
+
+.alert-info {
+	background-color: $brand-secondary;
+    color: white;
 }
 
 input[type="file"] {

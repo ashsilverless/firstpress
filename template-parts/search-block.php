@@ -23,17 +23,22 @@
 			});
 		?>
 		
-			<select name="salary" type="taxonomy" class="empty">
+			<div class="select-wrapper">
 				
-				<option value="" selected>Salary</option>
-		
-				<?php foreach($categories as $category): ?>
-		
-				<option value="<?php echo $category->slug; ?>"><?php echo $category->name; ?></option>
-		
-				<?php endforeach; ?>
+				<select name="salary" type="taxonomy" class="empty">
+					
+					<option value="" selected>Salary</option>
 			
-			</select>
+					<?php foreach($categories as $category): ?>
+			
+					<option value="<?php echo $category->slug; ?>"><?php echo $category->name; ?></option>
+			
+					<?php endforeach; ?>
+				
+				</select>
+				
+				<div class="icon-select"><i class="fas fa-arrow-down"></i></div>
+			</div>
 		
 		<?php endif; ?>
 		
