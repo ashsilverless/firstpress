@@ -20,7 +20,7 @@ get_header();?>
     
         <div class="row">
             
-            <div class="col-6 pt3">
+            <div class="col-7 pt3">
                 
                 <?php if( get_field('text_block_text') ): ?>
 
@@ -30,13 +30,47 @@ get_header();?>
 
                 <?php endif;?>
                 
-                <div class="mb5">
-                   CANDIDATES
-                </div>                               
+                <div class="candidates mb5">
+	                
+					<?php
+                    
+                    $pers = get_posts(
+                    	array(
+	                    	'post_type' => 'candidate',
+						)
+					);
+					
+					if($pers) {
+						foreach($pers as $per) {
+$id 		 = $per->ID;
+$salary 	 = get_field("salary", $id);
+$time   	 = human_time_diff( get_the_time('U'), current_time('timestamp') ) . " ago";
+$type		 = get_the_terms($id, 'type')[0]->name;
+$title 		 = get_the_title($id);
+$location 	 = get_the_terms($id, 'location')[0]->name;
+$description = get_field("description", $id);
+$link 		 = get_permalink($id);
+$skills     = get_field('skills', $id);
+$language   = get_field('languages_spoken', $id);
+
+$sex = get_field('sex', $id);
+
+$transport  = get_field('transport', $id);
+$accom  = get_field('skills');
+$salary = $salary ? "£ " . number_format($salary, 0, '.', ',') : "";
+
+							
+							include(get_template_directory() . '/template-parts/candidate-card.php');
+						}
+					}
+                    
+                    ?>
+                    
+                </div>                         
                 
             </div><!--col-->
-            
-            <div class="col-5 offset-1 sticky-sidebar">
+
+            <div class="col-5">
 
                 <div class="sidebar-wrapper">
                     

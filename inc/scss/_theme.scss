@@ -558,6 +558,72 @@ input[type="file"] {
     }
 }
 
+.candidate-card {
+    position: relative; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding:1em;
+    
+    &:before {
+        @include backgroundContain;
+        content: '';
+        position: absolute;
+        top:1em;
+        right: 1em;
+        height: 3em;
+        width: 3em;
+        background: url('inc/img/male.svg');
+    }
+    
+    &.female:before {
+        background: url('inc/img/female.svg');        
+    }
+    
+    &.permanent {
+        background: $brand-secondary;
+    }
+
+    &.temporary {
+        background: $brand-primary;
+    }
+
+    .type {
+        font-style: italic;
+        font-size: 0.85em;
+    }
+
+    .name {
+        text-transform: none;
+    }
+
+    .type,
+    .name {
+        grid-column: 1/2;
+    }
+    
+    .description,
+    .skills {
+        grid-column: 1/3;
+    }
+
+    .sex,
+    .skills,
+    .language,
+    .location,
+    .salary,
+    .transport {
+        margin-bottom: 0.5em;
+        font-size: 0.85em;
+    }
+
+    .button {
+        grid-column: 2/3;
+        box-shadow: inset 0 0 0 2px $brand-mid-grey;
+        color: $brand-mid-grey;
+    }
+    
+}
+
 /*===========PAGE SPECIFIC==========*/
 
 .page-template-contact-page {

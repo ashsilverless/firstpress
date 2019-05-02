@@ -22,7 +22,7 @@ get_header();?>
             
             <div class="col-6 pt3">
                 
-                                <div class="jobs mb5">
+                <div class="jobs mb5">
 	                
 					<?php
                     
