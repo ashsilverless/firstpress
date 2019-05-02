@@ -32,6 +32,7 @@
                 
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form mt3 mb3">
 		<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Job Title / Job Keywords', 'firstpress' ); ?>" />
+		<input type="hidden" name="post_type" value="job" />
 		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search Jobs', 'firstpress' ); ?>" />
 	</form>
 

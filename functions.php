@@ -342,21 +342,22 @@ function template_chooser($template) {
 			       OR $wpdb->posts.post_status = 'private')
 			GROUP BY $wpdb->posts.ID"
 		);
-					
+		
 		$ids = array_map(function($post){
 			return $post->ID;
 		}, $posts);
 		
-		$wp_query->query(
-			array(
-				'post__in'  => $ids,
-				'post_type' => $post_type,
-			    'tax_query' => $tax_query
-			)
-		);
 		
-	
-		return locate_template('search-job.php');
+		if(sizeof($ids) > 0) {
+		
+			$wp_query->query(
+				array(
+					'post__in'  => $ids,
+					'post_type' => $post_type,
+				    'tax_query' => $tax_query
+				)
+			);
+		}
 	}
 	
 	return $template;
