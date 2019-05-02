@@ -547,14 +547,39 @@ body.page-template-job-permanent .hero:before {
                 width: 75%;
                 margin-right: 2%;
                 margin-bottom: 0;
-                background: $brand-light-grey;
+                background: $brand-dark-grey;
                 color: white;
-                padding: 1.25em;
+                padding: 1em;
                 text-align: center;
                 align-items: center;
                 text-transform: uppercase;
                 font-weight: 400;
                 font-size: 0.75em;
+                
+                &:before {
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f15c";
+                    display: inline-block;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    font-size: 2em;
+                    line-height: 1em;
+                    font-weight: 900;
+                    color: $brand-secondary;
+                }
+                
+                &:hover {
+                    cursor: pointer;
+                }
+                
+                &.attached {
+                    background: $brand-mid-grey;
+                    
+                    &:before {
+                        content: "\f058";       
+                        color: $brand-primary;                 
+                    }
+                }
             }
             
             .wpcf7-submit {
