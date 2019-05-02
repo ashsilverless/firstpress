@@ -43,8 +43,14 @@ jQuery(document).ready(function( $ ) {
 
 	$(document).ready(function(){
         $('input#fileupload').change(function(){
-	        $(".file-name").text($(this).val());
-	        $('.custom-file-upload').addClass('attached');
+	        var file = $("input[type=file]")[0].files;
+	        var name = file.length > 0 ? file[0].name : "";
+	        
+	        if(file.length > 0 && name) {
+		        $('.custom-file-upload').addClass('attached');
+	        }
+	        
+	        $(".file-name").text(name);
         });
     });
 

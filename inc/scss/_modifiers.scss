@@ -28,6 +28,10 @@ $sides: (top, bottom, left, right); // Sides var
     margin-bottom: 2em;
 }
 
+.center {
+	text-align: center;
+}
+
 /* Height */
 
 $height: (0, 25, 50, 75, 100); // Amount string.
