@@ -1,3 +1,16 @@
+<?php 
+$id 		 = $job->ID;
+$salary 	 = get_field("salary", $id);
+$time   	 = human_time_diff( get_the_time('U'), current_time('timestamp') ) . " ago";
+$type		 = get_the_terms($id, 'type')[0]->name;
+$title 		 = get_the_title($id);
+$location 	 = get_the_terms($id, 'location')[0]->name;
+$description = get_field("description", $id);
+$link 		 = get_permalink($id);
+
+$salary = $salary ? "£ " . number_format($salary, 0, '.', ',') : "";
+?>
+
 <div class="job-card block <?php echo strtolower($type); ?>">
     
     <div class="content">

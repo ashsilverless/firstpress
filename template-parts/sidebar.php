@@ -1,8 +1,8 @@
-<div class="sidebar-cta">
+<div class="sidebar-cta submit-cv">
     
     <h2 class="heading heading__lg font400">Find Your Perfect Job In Catering</h2>
     
-    <a href="" class="button button__ghost button__fullwidth mt2">Submit CV</a>
+    <a href="/contact-us" class="button button__ghost button__fullwidth mt2">Submit CV</a>
     
 </div>
 
@@ -48,6 +48,6 @@
 
 <div class="sidebar-cta text-center">
     
-    <a href="" class="heading__light"><h2 class="heading heading__md font400">Search All Jobs</h2></a>
+    <a href="/jobs" class="heading__light"><h2 class="heading heading__md font400">Search All Jobs</h2></a>
     
 </div>
