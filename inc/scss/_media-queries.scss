@@ -145,8 +145,14 @@ body {
 
 /*---HEADER---*/
 
-.wrapper-hero {
-  height: 50vh;
+header {
+    top: 0;
+    transition: top 0.5s ease;
+}
+
+.scrolled header {
+    top: -20em;
+    overflow: hidden;
 }
 
 /*---CONTENT---*/
@@ -177,7 +183,7 @@ main .content .row {
 	}
 	
 	.col-6 {
-		padding: 4em 4em 0 4em;
+		padding: 2em 2em 0 2em;
 	}
 }
 
@@ -250,57 +256,21 @@ main .content .row {
 /*---GLOBALS---*/
 
 body {
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
 
 /*---HEADER---*/
 
-nav {
-    padding-top: 1em;
-}
-
-nav .brand {
-    display: none;
-}
-
-.telephone {
-    margin-top: 3px;
-}
-
-nav .brand,
-.telephone {
-  font-size: 1.5em;
-}
-
-body .hamburger-inner span {
-  top: -12px;
-}
-
-.nav-wrapper__menu ul li a {
-    font-size: 3em;
+.hero__content svg {
+    height: 8em;
+    margin-bottom: 2em;
 }
 
 /*---CONTENT---*/
 
-#kglogo {
-    max-width: 150px;
+.heading__xl {
+    font-size: 4em;
 }
-
-.room-card__carousel {
-    min-height: 20em;
-}
-
-.three-quarters .icon-list {
-    column-count:2;
-}
-
-.multi-panel__lower-section__panel {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto auto;
-}
-
-
 
 /*---FOOTER---*/
   

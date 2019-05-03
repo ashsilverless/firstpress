@@ -287,6 +287,8 @@
     &.all-jobs a {
         display: block;
         padding: 3em;
+        background: hsl(210, 6%, 60%);
+        color: $brand-dark-grey;
         transition:all 0.5s ease;
         
         &:hover {
@@ -873,6 +875,10 @@ input[type="file"] {
 		align-items: center;
 		height: 100%;
     }
+}
+
+.single-job .quick-contact {
+    display: none;
 }
 /*===========VENDOR ADJUSTMENTS==========*/
 

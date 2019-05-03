@@ -59,6 +59,11 @@ get_header();?>
            
 	            <div class="description"><?php the_field("description"); ?></div>
                 
+                    <h5 class="heading heading__sm font700 mt1">Job Details</h5>                    							
+                    <p class="mb0"><span class="font400">Job Type:</span> <?php echo $type;?></p>
+                    <p class="mb0"><span class="font400">Location:</span> <?php echo $location;?></p>	                    			
+                    <p class="mb1"><span class="font400">Salary:</span> <?php echo $salary;?></p>	
+
             <?php 
 
                 $terms = wp_get_post_terms( $post->ID, 'location'); 
