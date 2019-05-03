@@ -69,6 +69,7 @@
     
     input {
         border: none;
+        border-radius:0;
         font-size: 1.25em;
         padding: 0.5em 1em;
         
@@ -80,6 +81,7 @@
     .submit {
         display: inline-grid;
         height: 100%;
+        border-radius: 0;
         font-size: 1em;
         text-transform: uppercase;
         background: $brand-dark-grey;

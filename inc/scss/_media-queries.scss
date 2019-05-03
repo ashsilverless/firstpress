@@ -184,6 +184,10 @@ body {
     height:75vh;
 }
 
+#menu-item-1600 {
+    display: none; /* remove 'About Us' item on mobile to save space*/
+}
+
 /*---CONTENT---*/
 
 .hero__content svg {
@@ -195,6 +199,10 @@ body {
 
 .heading__xl {
     font-size: 4em;
+}
+
+.search-form {
+    width:95%;
 }
 
 /*---FOOTER---*/
