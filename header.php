@@ -7,7 +7,12 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>  
+<?php
+	$url = explode('/',$_SERVER['REQUEST_URI']);
+	$dir = $url[1] ? $url[1] : 'home';
+?>
+
+<html <?php language_attributes(); ?> class="<?php echo $dir ?>">  
 <head>
 
 <meta charset="UTF-8">

@@ -46,7 +46,7 @@
     
 </div>
 
-<div class="sidebar-cta text-center">
+<div class="sidebar-cta all-jobs text-center">
     
     <a href="/jobs" class="heading__light"><h2 class="heading heading__md font400">Search All Jobs</h2></a>
     

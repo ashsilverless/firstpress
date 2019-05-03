@@ -1,4 +1,4 @@
-<div class="candidate-card <?php echo strtolower($type); ?> <?php echo strtolower($sex); ?> mb2">
+<div class="candidate-card <?php echo strtolower($type); ?> <?php echo strtolower($sex); ?> mb2 slide-right">
 
     <p class="type mb0"><?php echo $type;?></p>
     <h2 class="name heading heading__md"><?php echo $title; ?></h5>  

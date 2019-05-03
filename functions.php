@@ -126,12 +126,6 @@ function my_custom_fonts() {
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
-	
-	/*acf_add_options_sub_page(array(
-		'page_title' 	=> 'Header Settings',
-		'menu_title'	=> 'Header',
-		'parent_slug'	=> 'site-general-settings',
-	));*/
 
 	acf_add_options_page(array(
 		'page_title' 	=> 'Testimonials',
@@ -141,13 +135,6 @@ function my_custom_fonts() {
 		'redirect'		=> false
 	));
 
-	acf_add_options_page(array(
-		'page_title' 	=> 'Call To Action',
-		'menu_title'	=> 'Call To Action',
-		'menu_slug' 	=> 'call-to-action',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));	
 }
  
 /**= Remove Default Menu Items =**/
@@ -364,3 +351,41 @@ function template_chooser($template) {
 }
 
 add_filter('template_include', 'template_chooser');  
+
+/*********************
+* re-order left admin menu
+**********************/
+function reorder_admin_menu( $__return_true ) {
+    return array(
+'index.php', // Dashboard
+'edit.php?post_type=job', // Jobs
+'edit.php?post_type=candidate', // Candidate
+'separator1', // --Space--
+'edit.php?post_type=page', // Pages 
+'separator2', // --Space--
+'upload.php', // Media
+'separator2', // --Space--
+'themes.php', // Appearance
+'plugins.php', // Plugins
+'users.php', // Users
+'tools.php', // Tools
+'options-general.php', // Settings
+'separator3', // --Space--
+'wpcf7', // Contact Form 7 
+
+   );
+}
+add_filter( 'custom_menu_order', 'reorder_admin_menu' );
+add_filter( 'menu_order', 'reorder_admin_menu' );
+
+
+/*
+* Remove top level and sub menu admin menus
+*/
+function remove_admin_menus() {
+   remove_menu_page( 'edit.php' ); // Posts 
+   remove_menu_page( 'edit-comments.php' ); // Comments
+   remove_menu_page( 'tools.php' ); // Tools
+}
+add_action( 'admin_menu', 'remove_admin_menus' );
+

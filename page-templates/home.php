@@ -32,7 +32,7 @@ get_header();?>
                     
                 <?php $leaderImage = get_sub_field('image');?>
                 
-                <div class="leader mb5" style="background-image: url(<?php echo $leaderImage['url']; ?>); border-color: <?php the_sub_field('border_color');?>">
+                <div class="leader mb5 slide-up" style="background-image: url(<?php echo $leaderImage['url']; ?>); border-color: <?php the_sub_field('border_color');?>">
                     
                     <h3 class="heading heading__md font700"><?php the_sub_field('heading');?></h3>
                     

@@ -22,6 +22,7 @@
     &__content {
         position: relative;
         z-index: 10;
+        text-align: center;
         
         h3 {
             position: relative;
@@ -38,16 +39,14 @@
             }
         }
         
-        .logo {
-            display: block;
-            margin-bottom: 3em;
-            text-align: center;
+        svg {
+            height: 12em;
             
-            img {
-                width:5em;
-                filter: brightness(1000%);    
+            path,
+            g polygon {
+                fill:white;
             }
-        }
+        }        
     }
     
     &__carousel {
