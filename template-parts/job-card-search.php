@@ -17,11 +17,11 @@ $defaultImage = get_field('default_job_image', 'options');?>
 
 <?php if( get_field('image', $id)): ?>
 	    
-<div class="job-card block <?php echo strtolower($type); ?> " style="background-image: url(<?php echo $heroImage['url']; ?>);">
+<div class="job-card block slide-right <?php echo strtolower($type); ?> " style="background-image: url(<?php echo $heroImage['url']; ?>);">
     	    
     <?php else: ?>
 
-<div class="job-card block <?php echo strtolower($type); ?> " style="background-image: url(<?php echo $defaultImage['url']; ?>);">
+<div class="job-card block slide-right <?php echo strtolower($type); ?> " style="background-image: url(<?php echo $defaultImage['url']; ?>);">
     
     <?php endif;?>
     
