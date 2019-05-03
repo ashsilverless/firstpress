@@ -1,7 +1,5 @@
 <?php
 /**
- * ============== Template Name: Jobs
- * ============== Template Post Type: job
  *
  * @package firstpress
  */

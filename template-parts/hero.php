@@ -22,11 +22,11 @@
         				
     						<a href="<?php echo home_url(); ?>" alt="<?php wp_title(''); ?>" title="<?php wp_title(''); ?>" class="logo">
         						
-        						<img src="<?php echo $brandImage['url'];?>" alt="" title=""/>
+        						<?php get_template_part('template-parts/logo');?>
         						
     						</a>
 
-                <h1 class="heading heading__xl heading__light center"><?php the_field( 'hero_heading' );?></h1>
+                <h1 class="heading heading__xl heading__light center slow-fade"><?php the_field( 'hero_heading' );?></h1>
 
                 <?php if ( is_front_page() ) {?>
                 

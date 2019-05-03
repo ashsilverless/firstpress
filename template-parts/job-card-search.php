@@ -11,7 +11,7 @@ $link 		 = get_permalink($id);
 $salary = $salary ? "£ " . number_format($salary, 0, '.', ',') : "";
 ?>
 
-<div class="job-card block <?php echo strtolower($type); ?>">
+<div class="job-card block <?php echo strtolower($type); ?> slide-right">
     
     <div class="content">
 	    

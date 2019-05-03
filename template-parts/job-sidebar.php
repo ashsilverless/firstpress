@@ -1,6 +1,6 @@
 <div class="sidebar-wrapper">
 
-    <div class="sidebar-cta">
+    <div class="sidebar-cta sidebar-cta__form">
         
         <h2 class="heading heading__md font700 mb1">Apply Now</h2>
     

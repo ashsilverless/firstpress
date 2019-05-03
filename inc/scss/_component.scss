@@ -22,6 +22,12 @@
         background:transparent;
         box-shadow: inset 0 0 0 2px $brand-secondary;
         color: $brand-secondary;
+        transition:all 0.5s ease;
+        
+        &:hover {
+            background:$brand-secondary;
+            color: $brand-dark-grey;
+        }
     }
     
     &__inline-cta {
@@ -60,9 +66,13 @@
     margin:0.5em 0;
     border:2px solid $brand-secondary;
     color: $brand-dark-grey !important;
-
+    transition: all 0.5s ease;
+     
   &:hover {
       cursor:pointer;
+      background: $brand-dark-grey;
+      border-color: $brand-dark-grey;
+      color: white !important;
   }
 }
 

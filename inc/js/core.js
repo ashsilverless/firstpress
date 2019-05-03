@@ -14,10 +14,6 @@ jQuery(document).ready(function( $ ) {
         next();
     });
 
-    $(document).ready(function( $ ) {
-      $( ".toggle" ).first().addClass( "active" );
-    });
-    
 /* ADD CLASS ON SCROLL*/
 
 	$(window).scroll(function() {
@@ -28,15 +24,6 @@ jQuery(document).ready(function( $ ) {
         } else {
             $("body").removeClass("scrolled");
         }
-    });
- 
-//Smooth Scroll
-
-    $('nav a, a.button, a.next-section').click(function(){
-        $('html, body').animate({
-            scrollTop: $( $(this).attr('href') ).offset().top -100
-        }, 500);
-        return false;
     });
     
 /* File upload name */
@@ -54,18 +41,33 @@ jQuery(document).ready(function( $ ) {
         });
     });
 
-// ========== Controller for lightbox elements
+/* CLASS AND FOCUS ON CLICK */
 
-    $(document).ready(function() {
-
-        $('.lightbox-gallery').magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled:true
-            }
-        });
+    $(".trigger-copy-expand").click(function(event) {
+      $('.collapsed-content').addClass("expand");
+      $(this).hide();
+       $('.trigger-copy-collapse').show();     
     });
- 
+
+    $(".trigger-copy-collapse").click(function(event) {
+        $('.collapsed-content').removeClass("expand");
+        $(this).hide();
+        $('.trigger-copy-expand').show();     
+    });
+
+    $(".trigger-expand").click(function(event) {
+        $(this).closest('.expanding-copy').addClass("expand");
+    });
+
+    $(".trigger-collapse").click(function(event) {
+        $(this).closest('.expanding-copy').removeClass("expand");
+    });
+
+    $(".toggle").click(function() {   
+      	$('.toggle.active').removeClass("active"); 
+        $(this).addClass("active");   
+    });
+
 // GLOBAL OWL CAROUSEL SETTINGS
 
     $('.carousel').owlCarousel({
@@ -105,128 +107,78 @@ jQuery(document).ready(function( $ ) {
         }
     })
 
-/* CLASS AND FOCUS ON CLICK */
+// ========== Add class if in viewport on page load
 
-    $('.menu-trigger').click(function() {
-        $('.hamburger').toggleClass('is-active');
-        $(".nav-menu").toggleClass("menu-open");
-    });
+$.fn.isOnScreen = function(){
+    
+    var win = $(window);
+    
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+    
+    var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top + this.outerHeight();
+    
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    
+};
 
-    $('.multi-panel__trigger').click(function() {
-        $(".multi-panel__trigger.active").removeClass("active");
-        $(this).addClass('active');
-    });
+  $('.slide-up').each(function() {
+    if ($(this).isOnScreen()) {
+      $(this).addClass('active');    
+    } 
+  });   
+    $('.slide-right').each(function() {
+    if ($(this).isOnScreen()) {
+      $(this).addClass('active');    
+    } 
+  });  
+    $('.slow-fade').each(function() {
+    if ($(this).isOnScreen()) {
+      $(this).addClass('active');    
+    } 
+  });  
 
-    $('.menu-item a').click(function() {
-        $(".nav-wrapper").removeClass("menu-open");
-        $(".nav-wrapper__trigger.is-active").removeClass("is-active");
-    });
+// ========== Add class on entering viewport
 
-    $(".openTrigger").click(function(event) {
-      $('.content__hidden').addClass("show");
-      $(this).addClass("hide");
-    });
+$.fn.isInViewport = function() {
+var elementTop = $(this).offset().top;
+var elementBottom = elementTop + $(this).outerHeight();
+var viewportTop = $(window).scrollTop();
+var viewportBottom = viewportTop + $(window).height();
+return elementBottom > viewportTop && elementTop < viewportBottom;
+};
 
-    $(".closeTrigger").click(function(event) {
-      $('.content__hidden').removeClass("show");
-      $('.openTrigger').removeClass("hide");
-    });
-
-    $(".trigger-copy-expand").click(function(event) {
-      $('.collapsed-content').addClass("expand");
-      $(this).hide();
-       $('.trigger-copy-collapse').show();     
-    });
-
-    $(".trigger-copy-collapse").click(function(event) {
-        $('.collapsed-content').removeClass("expand");
-        $(this).hide();
-        $('.trigger-copy-expand').show();     
-    });
-
-
-    $(".trigger-expand").click(function(event) {
-        $(this).closest('.expanding-copy').addClass("expand");
-    });
-
-    $(".trigger-collapse").click(function(event) {
-        $(this).closest('.expanding-copy').removeClass("expand");
-    });
-
-    $(".toggle").click(function() {   
-      	$('.toggle.active').removeClass("active"); 
-        $(this).addClass("active");   
-    });
-
-// ========== Filtering controller (mixitup)
-
-if($('#mixitup-camps').length) {
-
-var campsMixer = mixitup('#mixitup-camps', {
-    load: {
-        filter: 'all'
-    },
-    selectors: {
-        control: '.mixitup-control'
-    },
-    pagination: {
-        limit: 6,
-        maintainActivePage: false,
-        loop: true,
-        hidePageListIfSinglePage: true
-    },
-    callbacks: {
-        onMixEnd: function() {
-            jQuery(window).trigger('resize').trigger('scroll');
-        }
-    }
+$(window).on('resize scroll', function() {
+  $('.experience-level').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).addClass('active');
+    } 
+  });
+  $('.slide-up').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).addClass('active');    
+    } 
+  });   
+    $('.slide-right').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).addClass('active');    
+    } 
+  });  
+    $('.slow-fade').each(function() {
+    if ($(this).isInViewport()) {
+      $(this).addClass('active');    
+    } 
+  });    
+    
 });
-}
 
-if($('#mixitup-camps-villas').length) {
 
-    var campsVillasMixer = mixitup('#mixitup-camps-villas', {
-        load: {
-            filter: 'all'
-        },
-        selectors: {
-            control: '.mixitup-control'
-        },
-        pagination: {
-            limit: 18,
-            maintainActivePage: false,
-            loop: true,
-            hidePageListIfSinglePage: true
-        },
-        callbacks: {
-            onMixEnd: function() {
-                jQuery(window).trigger('resize').trigger('scroll');
-            }
-        }
-    });
-}
-
-if($('#mixitup-posts-from-past').length) {
-
-    var postMixer = mixitup('#mixitup-posts-from-past', {
-        load: {
-            filter: 'all'
-        },
-        selectors: {
-            control: '.mixitup-control'
-        },
-        pagination: {
-            limit: 6,
-            maintainActivePage: false,
-            loop: true,
-            hidePageListIfSinglePage: true
-        },
-        callbacks: {
-            onMixEnd: function() {
-                jQuery(window).trigger('resize').trigger('scroll');
-            }
-        }
-    });
-}
 
 });//Don't remove ---- end of jQuery wrapper
+

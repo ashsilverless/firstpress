@@ -2,11 +2,66 @@
 
 /*===========HEADER==========*/
 
+.home.loaded {
+    #press {
+      transform-origin: center;
+      animation-name: squeeze;
+      animation-duration: 4s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
+      animation-timing-function: ease-in-out;
+    }
+    
+    #handle {
+      transform-origin: center;
+      animation-name: move;
+      animation-duration: 4s;  
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
+      animation-timing-function: ease-in-out;
+    }
+    
+    #right {
+      transform-origin: center;
+      animation-name: spin;
+      animation-duration: 0.5s;  
+      animation-iteration-count: 8;
+      animation-direction: alternate; 
+      animation-delay: 0.5s;  
+      animation-timing-function: ease-in-out;
+    }
+    
+    #left {
+      transform-origin: center;
+      animation-name: spin;
+      animation-duration: 0.5s;  
+      animation-iteration-count: 8;
+      animation-direction: alternate;
+        animation-delay: 0.5s;
+      animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes squeeze {
+  from {transform: scaleY(1);}
+  to {transform: scaleY(0.8);}
+}
+
+@keyframes move {
+  from {transform: translateY(0);}
+  to {transform: translateY(8%);}
+}
+
+@keyframes spin {
+  from {transform: scaleX(1);} 
+  to {transform: scaleX(0.1);} 
+}
+
 .search-form {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 60% 40%;
-    width: 70%;
+    width: 60%;
     justify-content: center;
     align-items: center;
     margin: 3em auto;    
@@ -16,6 +71,10 @@
         border: none;
         font-size: 1.25em;
         padding: 0.5em 1em;
+        
+        &:focus {
+            outline: none;
+        }
     }
     
     .submit {
@@ -25,6 +84,13 @@
         text-transform: uppercase;
         background: $brand-dark-grey;
         color: white;
+        transition:all 0.5s ease;
+        
+        &:hover {
+            cursor:pointer;
+            background: $brand-primary;
+            color: $brand-dark-grey;
+        }
     }
     
     ::placeholder {
@@ -53,6 +119,11 @@
         .button {
             text-align: left;
             font-weight: 400;
+            transition: all 0.5s ease;
+            
+            &:hover {
+                background: $brand-dark-grey !important;
+            }
         }
     }
 }
@@ -199,14 +270,32 @@
 
 .sidebar-cta {
     position: relative;
-    padding: 3em;
+    padding: 0;
     background:$brand-dark-grey;
     color: white;
     
     &:after{
         @include overflowRight
         background: $brand-dark-grey;
-    }    
+    }   
+    
+    &.submit-cv,
+    &__form {
+        padding: 3em;
+    } 
+    
+    &.all-jobs a {
+        display: block;
+        padding: 3em;
+        transition:all 0.5s ease;
+        
+        &:hover {
+            cursor: pointer;
+            background:$brand-secondary;
+            color: $brand-dark-grey;
+        }
+          
+    }
 }
 
 .sidebar-contacts {
@@ -230,23 +319,26 @@
     
     li {
          margin-bottom: 10px;
-         background: $brand-mid-grey;
          
          a {
-             padding: 1em;
-             text-transform: uppercase;
-             display: block;
-             text-align: center;
-             font-weight: 400;
-             color: white;
-        }
-        
-        &.current_page_item {
-            background: $brand-secondary;
-            color: $brand-mid-grey;
-            a {
+            padding: 1em;
+            text-transform: uppercase;
+            display: block;
+            text-align: center;
+            font-weight: 400;
+            background: $brand-mid-grey;
+            color: white;
+            transition:all 0.5s ease;
+            
+            &:hover {
+                background: $brand-secondary;
                 color: $brand-mid-grey;                
             }
+        }
+        
+        &.current_page_item a {
+            background: $brand-secondary;
+            color: $brand-mid-grey;                
         }
         
         &:last-of-type {
@@ -323,6 +415,20 @@
 		    color: $brand-primary;
 	    }
 	    
+	    a {
+    	    transition: all 0.5s ease;
+	    }
+	    
+	    a:hover {
+        	    background:$brand-primary;
+        	    color: $brand-dark-grey;
+    	    
+    	        i {
+            	    background:$brand-dark-grey;
+            	    color:$brand-primary;        	        
+    	        }
+	    }
+	   
 	    a i {
 		    background: $brand-primary;
 	    }
@@ -332,6 +438,20 @@
 	    
 	    h2, h5, a {
 		    color: $brand-secondary;
+	    }
+
+	    a {
+    	    transition: all 0.5s ease;
+	    }
+
+	    a:hover {
+        	    background:$brand-secondary;
+        	    color: $brand-dark-grey;
+    	    
+    	        i {
+            	    background:$brand-dark-grey;
+            	    color:$brand-secondary;        	        
+    	        }
 	    }
 	    
 	    a i {
@@ -449,6 +569,10 @@ body.page-template-job-permanent .hero:before {
         line-height: 1.5em;
         text-transform: uppercase;
         color: white;
+        
+        &:hover {
+            color: $brand-primary;
+        }
     }
 }
 
@@ -621,6 +745,13 @@ input[type="file"] {
     padding: 0.5em 2em;
     margin-top: 10px;
     color: white;
+    transition: all 0.5s ease;
+    
+    &:hover {
+        cursor: pointer;
+        background:$brand-primary;
+        color: $brand-dark-grey;
+    } 
 }
 
 .callout {
@@ -696,6 +827,10 @@ input[type="file"] {
         color: $brand-mid-grey;
     }
     
+}
+
+.quick-contact p {
+    font-size: 1em;
 }
 
 /*===========PAGE SPECIFIC==========*/
