@@ -8,21 +8,25 @@ get_header();?>
 <!-- ******************* Hero Content ******************* -->
 
 <div class="content has-hero">
-	<?php 
-	    if( get_field('hero_type') == 'image' ): 
-	        $heroImage = get_field('hero_background_image');
-	    elseif ( get_field('hero_type') == 'color' ): 
-	        $heroColor = get_field('hero_background_colour');
-	    endif;
-	?>
+
+<?php $heroImage = get_field('image', $id);	
+$defaultImage = get_field('default_job_image', 'options');?>
 	
 	<?php
     	    $salary   = get_field("salary") ? "£ " . number_format(get_field("salary"), 0, '.', ',') : "";
        $location = get_the_terms(get_the_ID(), 'location')[0]->name;
        $type     = get_the_terms(get_the_ID(), 'type')[0]->name;
     ?>
-	
-	    <div class="hero h50" style="background-image: url(<?php echo get_template_directory_uri() . "/inc/img/job-hero.jpg"; ?>); background-color: <?php echo $heroColor; ?>;">
+
+<?php if( get_field('image')): ?>
+	    
+	    <div class="hero h50" style="background-image: url(<?php echo $heroImage['url']; ?>);">
+    	    
+    <?php else: ?>
+	    
+	    <div class="hero h50" style="background-image: url(<?php echo $defaultImage['url']; ?>);">
+    
+    <?php endif;?>
 	
 	    <div class="container">
 	    

@@ -11,7 +11,19 @@ $link 		 = get_permalink($id);
 $salary = $salary ? "£ " . number_format($salary, 0, '.', ',') : "";
 ?>
 
-<div class="job-card block <?php echo strtolower($type); ?> slide-right">
+<?php $heroImage = get_field('image', $id);	
+$defaultImage = get_field('default_job_image', 'options');?>
+
+
+<?php if( get_field('image', $id)): ?>
+	    
+<div class="job-card block <?php echo strtolower($type); ?> " style="background-image: url(<?php echo $heroImage['url']; ?>);">
+    	    
+    <?php else: ?>
+
+<div class="job-card block <?php echo strtolower($type); ?> " style="background-image: url(<?php echo $defaultImage['url']; ?>);">
+    
+    <?php endif;?>
     
     <div class="content">
 	    

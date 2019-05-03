@@ -10,11 +10,7 @@ get_header();?>
 
 <div class="content has-hero">
 
-<?php if( get_field('hero_background_image') ): 
-
-    get_template_part('template-parts/hero');?>
-
-<?php endif;?>
+<?php get_template_part('template-parts/hero');?>
 
     <div class="container">
     

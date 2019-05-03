@@ -1,4 +1,15 @@
-<div class="job-card <?php echo strtolower($type); ?>">
+<?php $heroImage = get_field('image', $id);	
+$defaultImage = get_field('default_job_image', 'options');?>
+
+<?php if( get_field('image', $id)): ?>
+	    
+<div class="job-card <?php echo strtolower($type); ?>" style="background-image: url(<?php echo $heroImage['url']; ?>);">
+    	    
+    <?php else: ?>
+
+<div class="job-card <?php echo strtolower($type); ?>" style="background-image: url(<?php echo $defaultImage['url']; ?>);">
+    
+    <?php endif;?>
     
     <div class="content">
     
