@@ -154,21 +154,6 @@ header {
         }
     }
     
-    .telephone-cta {
-        @include gridCenter;
-        background: $brand-mid-grey;
-        padding: 0.8em;
-        text-align: center;
-        height: 100%;
-        font-size: 1.3em;
-        font-weight: 300;
-        
-        i {
-            vertical-align: baseline;
-            color: hsl(0, 0%, 81%);
-            font-size: 0.75em;
-        }
-    }
 }
 
 nav {
@@ -205,7 +190,8 @@ nav {
     }
 }
 
-.nav-cta {
+.nav-cta,
+.telephone-cta {
     display: grid;
     justify-content: center;
     height: 100%;
@@ -218,12 +204,12 @@ nav {
         align-content: center;
         height: 100%;
         padding: 1em;
-        font-size: 0.8em;
         text-transform: uppercase;
-        font-weight: 900;
         transition: all 0.5s ease;
+        color: $brand-dark-grey;
         
         &:hover {
+            cursor: pointer;
             background: $brand-dark-grey;
             color: $brand-primary;
         }
@@ -238,6 +224,36 @@ nav {
         }
     }
 }
+
+.telephone-cta {
+    @include gridCenter;
+    background: $brand-mid-grey;
+    text-align: center;
+    height: 100%;
+    font-size: 1.3em;
+    font-weight: 300;
+    
+    a {
+        color: white;
+    }
+    
+    i {
+        vertical-align: baseline;
+        color: hsl(0, 0%, 81%);
+        font-size: 0.75em;
+    }
+    
+    a:nth-of-type(2) {
+    background:$brand-mid-grey;
+    
+    &:hover {
+        background: $brand-dark-grey;
+        color: $brand-secondary;
+    }
+}
+    
+}
+
 
 /*===========FOOTER==========*/
 footer {

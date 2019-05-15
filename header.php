@@ -64,10 +64,16 @@
 
                         <div class="col-5">
                             
-                            <a href="tel:01672 556532" class="telephone-cta">
-                                <span><i class="fas fa-phone"></i>
-                                01672 556532</span>
-                            </a>
+                            <div class="nav-cta">
+                                                            <a href="<?php echo home_url() . "/temporary-jobs"; ?>">Temp Jobs</a>
+
+                                <a href="<?php echo home_url() . "/permanent-jobs"; ?>">Permanent Jobs</a>
+                                                            
+                            
+
+
+                        
+                            </div>
                         
                         </div>
                 
@@ -83,11 +89,17 @@
 
                        <div class="col-5 offset-7">
                             
-                            <div class="nav-cta">
+                            <div class="telephone-cta">
                             
-                                <a href="<?php echo home_url() . "/temporary-jobs"; ?>">Temp<br/>Jobs</a>
+<a href="tel:<?php the_field('permanent_number', 'options');?>">
+                                <span><i class="fas fa-phone"></i>
+                                <?php the_field('permanent_number', 'options');?></span>
+                            </a>
                                 
-                                <a href="<?php echo home_url() . "/permanent-jobs"; ?>">Permanent<br/>Jobs</a>
+                            <a href="tel:<?php the_field('temporary_number', 'options');?>">
+                                <span><i class="fas fa-phone"></i>
+                                <?php the_field('temporary_number', 'options');?></span>
+                            </a>
                             
                             </div>
 

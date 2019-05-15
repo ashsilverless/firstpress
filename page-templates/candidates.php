@@ -52,13 +52,11 @@ $description = get_field("description", $id);
 $link 		 = get_permalink($id);
 $skills     = get_field('skills', $id);
 $language   = get_field('languages_spoken', $id);
-
 $sex = get_field('sex', $id);
-
 $transport  = get_field('transport', $id);
-$accom  = get_field('skills');
+$accom  = get_field('accom', $id);
 $salary = $salary ? "£ " . number_format($salary, 0, '.', ',') : "";
-
+$candidateImage = get_field('image', $id);
 							
 							include(get_template_directory() . '/template-parts/candidate-card.php');
 						}

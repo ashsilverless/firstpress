@@ -1,5 +1,7 @@
 <div class="candidate-card <?php echo strtolower($type); ?> <?php echo strtolower($sex); ?> mb2 slide-right">
 
+<div class="candidate-card__image" style="background-image: url(<?php echo $candidateImage['url']; ?>);"></div>
+
     <p class="type mb0"><?php echo $type;?></p>
     <h2 class="name heading heading__md"><?php echo $title; ?></h5>  
     <p class="sex heading"><?php  echo $sex; ?></p>
@@ -9,11 +11,10 @@
     <p class="language"><span class="heading">Langauge/s Spoken: </span><?php echo $language;?></p>
     <p class="salary"><span class="heading">Salary: </span><?php echo $salary;?></p>
     <p class="transport"><span class="heading">Transport: </span>
-        <?php if( get_field('transport', $id)):?>
-        	    Yes
-        <?php else:?>
-            No
-        <?php endif; ?>
+        <?php echo $transport;?>
+    </p>
+        <p class="accom"><span class="heading">Accommodation: </span>
+        <?php echo $accom;?>
     </p>
     <a href="mailto:ash@silverless.co.uk?subject=Enquire About Hiring <?php echo $title; ?>&body=Hi, I found <?php echo $title; ?> on the list of First Press candidates for hire.  Please contact me for more information." class="button button__ghost mt1">Hire Me</a>
     

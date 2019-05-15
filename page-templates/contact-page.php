@@ -64,7 +64,7 @@ get_header();?>
                     <div class="sidebar-contacts">
                         
                         <h4 class="heading heading__md font700">Contact Details</h4>   
-                        <p class="font400 mt2 mb0"><?php the_field('telephone_number', 'options');?></p>
+                        <p class="font400 mt2 mb0"><?php the_field('permanent_number', 'options');?></p>
                         
                         <p class="font400"><?php the_field('email_address', 'options');?></p>
                         

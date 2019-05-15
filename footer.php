@@ -18,7 +18,7 @@
             <div class="col-3">            
                 
                 <h3 class="heading heading__sm font400">QUICK CONTACT</h3>
-                <p class="font400 mt2 mb0"><?php the_field('telephone_number', 'options');?></p>
+                <p class="font400 mt2 mb0"><?php the_field('permanent_number', 'options');?></p>
                 <p class="font400"><?php the_field('email_address', 'options');?></p>
             
             </div>            
