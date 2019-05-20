@@ -24,13 +24,13 @@ get_header();?>
                 
                 <?php if( get_field('text_block_text') ): ?>
 
-                <div class="mb5">
+                <div class="">
                     <?php get_template_part('template-parts/text-block');?>
                 </div>
 
                 <?php endif;?>
                 
-                <div class="mb5">
+                <div class="mt1 mb5">
                     <?php the_field('body_content');?>
                 </div>                               
 

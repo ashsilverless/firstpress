@@ -27,7 +27,7 @@
 <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" type="image/x-icon" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
-	
+<meta name="google-site-verification" content="5kbl66QoKbEYUKJbgOZKjWOwONZyrtleq13zHs0S2zw" />	
 <?php wp_head(); ?>
 	
 </head>
