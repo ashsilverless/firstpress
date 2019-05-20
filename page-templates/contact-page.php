@@ -49,7 +49,7 @@ get_header();?>
                     
                     <a href="/gdpr-policy" class="button button__ghost button__fullwidth button__mandatory mb1">Read our GDPR Policy</a>
                     
-                    <a href="/privacy-policy" class="button button__ghost button__fullwidth button__mandatory mb1">Read our Privacy Policy</a>
+                    <!--<a href="/privacy-policy" class="button button__ghost button__fullwidth button__mandatory mb1">Read our Privacy Policy</a>-->
                     
                 </div>            
 
