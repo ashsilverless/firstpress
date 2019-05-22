@@ -28,24 +28,13 @@
                 <?php echo do_shortcode('[contact-form-7 id="1900"]');?>
             
             </div>                  
-            
-            
-            
-            
-            
+
         </div><!--r-->
     
     </div><!--c-->    
-    
-    
+
 </div>
-        
-        
-        
-        
-        
-        
-        
+
         <div class="pre-socket">
 
         <div class="container">
@@ -57,7 +46,6 @@
                         <p class="font700">Get job alerts to your inbox</p>
                         
                         <?php echo do_shortcode('[contact-form-7 id="1899" title="Subscribe Form"]');?>
-    
     
                     </div><!--col-->
                     
@@ -78,20 +66,15 @@
                             'theme_location' => 'footer-menu2',
                             'container_class' => 'footer' ) );
                         ?>
-    
-    
+
                     </div><!--col-->       
 
                 </div><!--row-->
         
         </div><!--container-->
-    
-    
+
 </div>
 
-
-
-    
         <div class="container">
     
             <div class="socket">
