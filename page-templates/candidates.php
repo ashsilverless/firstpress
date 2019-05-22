@@ -44,7 +44,7 @@ get_header();?>
 						foreach($pers as $per) {
 $id 		 = $per->ID;
 $salary 	 = get_field("salary", $id);
-$time   	 = human_time_diff( get_the_time('U'), current_time('timestamp') ) . " ago";
+$time   	 = human_time_diff( get_the_time('U', $id), current_time('timestamp') ) . " ago";
 $type		 = get_the_terms($id, 'type')[0]->name;
 $title 		 = get_the_title($id);
 $location 	 = get_the_terms($id, 'location')[0]->name;
