@@ -24,7 +24,8 @@
             </div>            
             
             <div class="col-9">            
-            <?php echo do_shortcode('[contact-form-7 id="1325"]');?>
+            
+                <?php echo do_shortcode('[contact-form-7 id="1900"]');?>
             
             </div>                  
             
