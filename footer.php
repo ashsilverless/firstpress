@@ -55,7 +55,7 @@
                         
                         <p class="font700">Get job alerts to your inbox</p>
                         
-                        <p>Excepteur sint occaecat cupidatat non proident</p>
+                        <?php echo do_shortcode('[contact-form-7 id="1893" title="Subscribe Form"]');?>
     
     
                     </div><!--col-->
@@ -103,7 +103,7 @@
     
                         <a href="<?php echo home_url() . '/terms-conditions'; ?>">Terms</a>
     
-                        <a href="<?php echo home_url() . '/privacy-policy'; ?>">Privacy</a>    
+                        <a href="<?php echo home_url() . '/gdpr-policy'; ?>">GDPR</a>    
     
                     </div>
 

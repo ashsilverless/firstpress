@@ -724,6 +724,40 @@ body.page-template-job-permanent .hero:before {
             }
         }     
     }
+    
+    &.subscribe {
+        grid-template-rows: repeat(1, 3em);
+        grid-template-columns: 65% 35%;
+        grid-gap:0.5em;
+        
+        .email-input {
+            grid-column: 1/2;
+            margin-bottom: 0;
+            
+            input {
+                padding:0.5em;
+            }
+        }
+        
+        .subscribe {
+            grid-column: 2/3;
+
+            .wpcf7-submit {
+                text-transform: uppercase;
+                font-size: 0.75em;
+                font-weight: 400;
+                background: hsl(210, 11%, 18%);
+                line-height: 2em;
+                border: none;
+                padding: 0.5em 2em;
+                margin-top: 0 !important;
+                color: hsl(0, 0%, 100%);
+                -webkit-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+        }
+    }
 }
 
 .alert-info {
